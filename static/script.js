@@ -17,20 +17,19 @@ function selectMood(mood) {
 }
 
 
-
 function changeLow() {
     let img = document.getElementById("default");
-    img.src = "../static/images/tenor_1.gif";
+    img.src = "../static/images/lawn_calm.gif";
 }
 
 function changeMedium() {
     let img = document.getElementById("default");
-    img.src = "../static/images/image2.gif";
+    img.src = "../static/images/rice_normal.gif";
 } 
 
 function changeHigh() {
     let img = document.getElementById("default");
-    img.src = "../static/images/image3.gif";
+    img.src = "../static/images/clem_crashout.gif";
 } 
 
 
