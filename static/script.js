@@ -29,6 +29,10 @@ function High() {
     document.body.style.backgroundImage = "url('/static/images/clem_crashout.gif')";
 }
 
+window.onload = () => {
+    document.body.style.backgroundImage = "url('/static/images/lawn_calm.gif')";
+};
+
 
 function setTime(minutes) {
     selectedTime = minutes;
