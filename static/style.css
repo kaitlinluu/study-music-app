@@ -1,5 +1,5 @@
 body {
-    background-image: url('/static/images/lawn_calm.gif’'); 
+    background-image: url('/static/images/lawn_calm.gif'); 
     background-size: cover; 
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -12,6 +12,7 @@ body {
 
 h1 {
   font-family: "Gaegu", sans-serif;
+    color: white;
   font-weight: 800;
   font-style: normal;
   font-size: 70px;
@@ -63,8 +64,4 @@ div {
   gap: 5px;
   font-family: "Gaegu", sans-serif;
   font-size: 57px;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 6b3011f0a0c13eeb67053d7198f778dc4dcfcb40
