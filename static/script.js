@@ -62,6 +62,6 @@ function startSession() {
 function updateTimerDisplay(seconds) {
     const min = Math.floor(seconds / 60);
     const sec = seconds % 60;
-    document.getElementById("timer").textContent =
+    document.getElementById("time-display").textContent =
         `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
 }
