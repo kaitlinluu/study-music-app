@@ -1,7 +1,8 @@
 let mood = null
 let focus = null
 let time = null
-let TimerInterval = null
+let selectedTime = 0
+let timerInterval = null
 let remainingSeconds = 0
 
 
@@ -11,17 +12,11 @@ function selectMood(mood) {
         .then(data => {
             console.log("Playlist URL from server:", data.playlist);
             const spotify = document.getElementById("spotify");
-            spotify.src = data.get_playlist;
+            spotify.src = data.playlist;
         })
 }
 
-function selectFocus(focus) {
-    const mouse = document.getElementById("mouse");
-    mouse.classlist.remove('sleeping', 'working', 'running')
-    if (level === "low") mouse.classList.add("sleeping");
-    if (level === "medium") mouse.classList.add("working");
-    if (level === "high") mouse.classList.add("running");
-}
+
 
 function changeLow() {
     let img = document.getElementById("default");
@@ -39,21 +34,27 @@ function changeHigh() {
 } 
 
 
+function setTime(minutes) {
+    selectedTime = minutes;
+    remainingSeconds = minutes * 60;
+    updateTimerDisplay(remainingSeconds);
+}
 
-function startTimer(minutes) {
+function startSession() {
+    if (selectedTime === 0) {
+        alert("Please select a study time first!");
+        return;
+    }
+
     clearInterval(timerInterval);
 
-    let seconds = minutes * 60;
-
-    updateTimerDisplay(seconds);
-
     timerInterval = setInterval(() => {
-        seconds--;
+        remainingSeconds--;
+        updateTimerDisplay(remainingSeconds);
 
-        updateTimerDisplay(seconds);
-
-        if (seconds <= 0) {
+        if (remainingSeconds <= 0) {
             clearInterval(timerInterval);
+            alert("Time's up! Take a break :)");
         }
     }, 1000);
 }
@@ -61,7 +62,6 @@ function startTimer(minutes) {
 function updateTimerDisplay(seconds) {
     const min = Math.floor(seconds / 60);
     const sec = seconds % 60;
-
     document.getElementById("timer").textContent =
-        `${min}:${sec.toString().padStart(2, '0')}`;
+        `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
 }
