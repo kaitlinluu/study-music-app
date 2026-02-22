@@ -17,20 +17,17 @@ function selectMood(mood) {
 }
 
 
-function changeLow() {
-    let img = document.getElementById("default");
-    img.src = "../static/images/lawn_calm.gif";
+function Low() {
+    document.body.style.backgroundImage = "url('/static/images/lawn_calm.gif')";
 }
 
-function changeMedium() {
-    let img = document.getElementById("default");
-    img.src = "../static/images/rice_normal.gif";
-} 
+function Medium() {
+    document.body.style.backgroundImage = "url('/static/images/rice_normal.gif')";
+}
 
-function changeHigh() {
-    let img = document.getElementById("default");
-    img.src = "../static/images/clem_crashout.gif";
-} 
+function High() {
+    document.body.style.backgroundImage = "url('/static/images/clem_crashout.gif')";
+}
 
 
 function setTime(minutes) {
